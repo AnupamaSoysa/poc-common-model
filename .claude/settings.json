@@ -1,17 +1,14 @@
 {
-  "defaultMode": "acceptEdits",
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
-      "Edit",
-      "Write",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git checkout:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(gh pr create:*)",
-      "Bash(gh pr view:*)"
+      "Edit(./**)",
+      "Bash(git *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
     ]
   }
 }
