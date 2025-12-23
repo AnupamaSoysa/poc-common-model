@@ -1,14 +1,16 @@
-{
-  "permissions": {
-    "defaultMode": "acceptEdits",
-    "allow": [
-      "Edit(./**)",
-      "Bash(git *)"
-    ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)"
-    ]
-  }
-}
+- name: Run Claude Code
+  uses: anthropics/claude-code-action@v1
+  with:
+    claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    settings: |
+      {
+        "permissions": {
+          "defaultMode": "acceptEdits",
+          "allow": [
+            "Edit(./**)",
+            "Write(./**)",
+            "Bash(git *)"
+          ]
+        }
+      }
+    claude_args: "--max-turns 20"
